@@ -10,7 +10,7 @@ variable "agent_count" {
 }
 
 variable "ssh_public_key" {
-    default = "~/.ssh/id_rsa.pub"
+    default = "C:/Users/user/.ssh/id_rsa.pub"
 }
 
 variable "dns_prefix" {
