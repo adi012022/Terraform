@@ -1,6 +1,6 @@
-resource_group_name = "aks_terraform_rg"
-location            = "West Europe"
-cluster_name        = "terraform-aks"
+resource_group_name = "ADITYA_POC_RG"
+location            = "WEST EUROPE"
+cluster_name        = "demofab-aks"
 kubernetes_version  = "1.22.4"
 system_node_count   = 3
 acr_name            = "demofab001acr"

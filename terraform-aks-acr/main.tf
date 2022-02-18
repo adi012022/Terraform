@@ -1,7 +1,11 @@
+## Creating Resource Group where all the Resources are getting created
+
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location
 }
+
+## Adding Role Assignment for Image Pull in ACR
 
 resource "azurerm_role_assignment" "role_acrpull" {
   scope                            = azurerm_container_registry.acr.id
@@ -10,6 +14,7 @@ resource "azurerm_role_assignment" "role_acrpull" {
   skip_service_principal_aad_check = true
 }
 
+## Creating Container Registry for pulling docker images
 resource "azurerm_container_registry" "acr" {
   name                = var.acr_name
   resource_group_name = azurerm_resource_group.rg.name
@@ -18,6 +23,7 @@ resource "azurerm_container_registry" "acr" {
   admin_enabled       = false
 }
 
+## Creating Kubernetes Cluster -- In UAE North
 resource "azurerm_kubernetes_cluster" "aks" {
   name                = var.cluster_name
   kubernetes_version  = var.kubernetes_version
